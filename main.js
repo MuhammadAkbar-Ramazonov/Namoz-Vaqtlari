@@ -1,6 +1,7 @@
 const elList = document.querySelector(".times-list");
 const elTemp = document.querySelector(".times-temp").content;
 
+// btns
 const elDayBtn = document.querySelector(".day-js");
 const elWeekBtn = document.querySelector(".week-js");
 const elMounthBtn = document.querySelector(".mounth-js");
@@ -9,8 +10,6 @@ function renderDay(arr, node){
   
   elList.innerHTML = "";
   const tempClone = elTemp.cloneNode(true);
-  
-  
   
   tempClone.querySelector(".today-data").textContent = arr.date;
   tempClone.querySelector(".tong-times").textContent = arr.times.tong_saharlik;
@@ -57,9 +56,11 @@ getTimes("https://islomapi.uz/api/present/day?region=Toshkent", renderDay);
 elDayBtn.addEventListener("click", function(){
   getTimes("https://islomapi.uz/api/present/day?region=Toshkent", renderDay)
 });
+
 elWeekBtn.addEventListener("click", function(){
   getTimes("https://islomapi.uz/api/present/week?region=Toshkent", renderTimes);
 });
+
 elMounthBtn.addEventListener("click", function(){
   getTimes("https://islomapi.uz/api/monthly?region=Toshkent&month=4", renderTimes);
 });
