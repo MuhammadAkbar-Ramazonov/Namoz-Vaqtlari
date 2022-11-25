@@ -62,5 +62,6 @@ elWeekBtn.addEventListener("click", function(){
 });
 
 elMounthBtn.addEventListener("click", function(){
+  console.log("dlkasio");
   getTimes("https://islomapi.uz/api/monthly?region=Toshkent&month=4", renderTimes);
 });
